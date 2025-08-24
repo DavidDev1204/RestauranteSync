@@ -23,4 +23,4 @@ COPY --from=publish /app/publish .
 
 # Configuración para Railway
 ENV ASPNETCORE_URLS=http://0.0.0.0:$PORT
-ENTRYPOINT ["dotnet", "TuProyecto.dll"]
+ENTRYPOINT ["dotnet", "RestauranteSync.API.dll"]
