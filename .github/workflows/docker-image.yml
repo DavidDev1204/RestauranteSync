@@ -16,7 +16,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: RestauranteSync/RestauranteSync.API/Dockerfile
+          file: ./RestauranteSync.API/Dockerfile
           push: true
           # Make sure to replace with your own namespace and repository
           tags: |
