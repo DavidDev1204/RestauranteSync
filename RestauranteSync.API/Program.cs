@@ -1,14 +1,6 @@
 using RestauranteSync.Infraestructure.Extensions;
-using DotNetEnv;
-
-// Load environment variables from .env file
-Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Configurar puerto para Railway
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -56,14 +48,12 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurante Sync v1");
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurante Sync v1");
+});
 
 app.UseHttpsRedirection();
 
