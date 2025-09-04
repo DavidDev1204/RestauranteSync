@@ -1,0 +1,8 @@
+version: "1.0"
+
+project:
+  name: dotnet-backend
+  description: Backend en .NET 9
+deploy:
+  type: docker-compose
+  file: docker-compose.yml
