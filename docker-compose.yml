@@ -1,8 +1,8 @@
 services:
   backend:
     build:
-      context: .
-      dockerfile: RestauranteSync/RestauranteSync.API/Dockerfile
+      context: .RestauranteSync
+      dockerfile: Dockerfile
     container_name: backend_dotnet
     restart: always
     ports:
