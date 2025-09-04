@@ -1,5 +1,3 @@
-version: "1.0"
-
 project:
   name: dotnet-backend
   description: Backend en .NET 9
