@@ -1,7 +1,7 @@
 services:
   backend:
     build:
-      context: ./RestauranteSync.API
+      context: .
       dockerfile: Dockerfile
     container_name: backend_dotnet
     restart: always
