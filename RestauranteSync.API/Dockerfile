@@ -3,13 +3,13 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Copiamos solo los archivos de proyecto primero (para aprovechar la cache de Docker)
-COPY RestauranteSync.API/RestauranteSync.API.csproj RestauranteSync.API/
-COPY RestauranteSync.Application/RestauranteSync.Application.csproj RestauranteSync.Application/
-COPY RestauranteSync.Domain/RestauranteSync.Domain.csproj RestauranteSync.Domain/
-COPY RestauranteSync.Infrastructure/RestauranteSync.Infrastructure.csproj RestauranteSync.Infrastructure/
+COPY ./RestauranteSync.API/RestauranteSync.API.csproj RestauranteSync.API/
+COPY ./RestauranteSync.Application/RestauranteSync.Application.csproj RestauranteSync.Application/
+COPY ./RestauranteSync.Domain/RestauranteSync.Domain.csproj RestauranteSync.Domain/
+COPY ./RestauranteSync.Infrastructure/RestauranteSync.Infrastructure.csproj RestauranteSync.Infrastructure/
 
 # Restauramos dependencias
-RUN dotnet restore RestauranteSync.API/RestauranteSync.API.csproj
+RUN dotnet restore ./RestauranteSync.API/RestauranteSync.API.csproj
 
 # Copiamos todo el código
 COPY . .
