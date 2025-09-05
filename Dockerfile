@@ -6,7 +6,7 @@ WORKDIR /src
 COPY RestauranteSync.API/RestauranteSync.API.csproj RestauranteSync.API/
 COPY RestauranteSync.Application/RestauranteSync.Application.csproj RestauranteSync.Application/
 COPY RestauranteSync.Domain/RestauranteSync.Domain.csproj RestauranteSync.Domain/
-COPY RestauranteSync.Infrastructure/RestauranteSync.Infrastructure.csproj RestauranteSync.Infrastructure/
+COPY RestauranteSync.Infraestructure/RestauranteSync.Infraestructure.csproj RestauranteSync.Infraestructure/
 
 # Restauramos dependencias
 RUN dotnet restore RestauranteSync.API/RestauranteSync.API.csproj
