@@ -2,7 +2,7 @@ services:
   restaurante-sync:
     build:
       context: .
-      dockerfile: RestauranteSync.API/Dockerfile
+      dockerfile: Dockerfile
     container_name: restaurante-sync
     ports:
       - "5000:5000"
