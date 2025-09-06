@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   restaurante-sync:
     build:
@@ -5,15 +7,15 @@ services:
       dockerfile: Dockerfile
     container_name: restaurante-sync
     environment:
-      ASPNETCORE_URLS=http://+:5000
+      ASPNETCORE_URLS: "http://+:5000"
       JwtSettings__SecretKey: "00d7662a64f17c621cdf5f89012d83bd3cc2867be5f75dc3e3a920b19c991495508b46ee5f9178dfbefa3a38a18216406602267e6651996ee1cc0a3f119ac42a"
       JwtSettings__Issuer: "RestauranteSync"
       JwtSettings__ExpirationInMinutes: "60"
       JwtSettings__Audience: "RestauranteSyncUsers"
       ConnectionStrings__PostgresConnection: "Host=syncronizer-trasoft-8nrcj4;Port=5432;Database=TrasoftDB;Username=postgres;Password=1-B'GtHyzBl'?)H//LaH"
     labels:
-      "traefik.enable=true"
-      "traefik.http.routers.api.rule=Host(`trasoft-sync-movil.com`)"
-      "traefik.http.routers.api.entrypoints=websecure"
-      "traefik.http.routers.api.tls.certresolver=letsencrypt"
-      "traefik.http.services.api.loadbalancer.server.port=5000"
+      - "traefik.enable=true"
+      - "traefik.http.routers.restaurante-sync.rule=Host(`trasoft-sync-movil.com`)"
+      - "traefik.http.routers.restaurante-sync.entrypoints=websecure"
+      - "traefik.http.routers.restaurante-sync.tls.certresolver=letsencrypt"
+      - "traefik.http.services.restaurante-sync.loadbalancer.server.port=5000"
