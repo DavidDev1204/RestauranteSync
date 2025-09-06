@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
+builder.WebHost.UseUrls("http://+:5000");
+
 // Configure Swagger
 builder.Services.AddSwaggerGen(options =>
 {
